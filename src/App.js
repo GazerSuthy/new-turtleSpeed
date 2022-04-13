@@ -2,7 +2,7 @@ import React from "react";
 
 import "./App.css";
 import GeneralInfo from "./components/general-info";
-import Header_Section from "./components/header";
+import HeaderSection from "./components/header";
 import Hero from "./components/hero";
 import ViewProjects from "./components/view-projects";
 
@@ -29,11 +29,11 @@ function App() {
       scrollToProjects();
       setScrollTo("");
     }
-  });
+  }, [scrollTo]);
 
   return (
     <div className="App">
-      <Header_Section setScrollTo={setScrollTo}></Header_Section>
+      <HeaderSection setScrollTo={setScrollTo}></HeaderSection>
       <Hero setScrollTo={setScrollTo}></Hero>
       <GeneralInfo projectLinkRef={projectLinkRef}></GeneralInfo>
       <ViewProjects setScrollTo={setScrollTo}></ViewProjects>
