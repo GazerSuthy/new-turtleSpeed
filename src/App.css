@@ -1,38 +1,799 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  /* colours */
+  --purple: #5f56a2;
+  --dark-purple: #4c4297;
+  --light-purple: #7068b0;
+  --yellow: #ddbb06;
+  --aqua-blue: #23c6de;
+  --light-blue: #beebf1;
+  --dark-aqua-blue: #0b515c;
+  --local-message-colour: #3f7b84;
+  --white: #ffffff;
+  --almost-white: #b4b4b4;
+  --almost-black: #202020;
+  --arrow-color: #aaa4d7;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* container adjustments */
+.header-container,
+.hero-container,
+.general-info-container,
+.project-container {
+  width: 88%;
+  margin: 0 auto;
+}
+
+/* ================
+    Header 
+  ================*/
+/* layout  */
+.header-section {
+  padding: 1em 0;
+  position: fixed;
+  background: var(--white);
+  width: 100%;
+  z-index: 100;
+  top: 0;
+}
+.logo {
+  width: 202px;
+  margin-top: 11px;
+}
+.logo-container:hover {
+  cursor: pointer;
+}
+.header-container {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+.phone-details,
+.main-nav {
+  display: none;
+}
+/* hamburger style */
+/* hamburger animation (copied code) https://codepen.io/RRoberts/pen/ZBYaJr */
+.hamburger .line {
+  width: 33px;
+  height: 3px;
+  background-color: rgb(180, 180, 180);
+  display: block;
+  margin: 8px auto;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.hamburger:hover {
+  cursor: pointer;
+}
+#hamburger-10 {
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  margin-top: 5px;
+}
+#hamburger-10.is-active {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+#hamburger-10.is-active .line:nth-child(1) {
+  width: 30px;
+}
+#hamburger-10.is-active .line:nth-child(2) {
+  width: 40px;
+}
+
+@media screen and (min-width: 500px) {
+  .logo {
+    width: 250px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@media screen and (min-width: 900px) {
+  .logo {
+    width: 303px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .hamburger {
+    display: none;
+  }
+  .main-nav {
+    display: block;
+  }
+  .main-nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+  }
+  .nav-link {
+    padding: 1em 2em;
+    margin-left: 3em;
+  }
+  .nav-link:hover,
+  .nav-link:focus {
+    cursor: pointer;
+    background: var(--light-blue);
+  }
+  .phone-details {
+    display: flex;
+    align-items: center;
+  }
+  .contact-icon-phone {
+    font-size: 1.5rem;
+    margin-right: 0.5em;
+  }
+}
+
+/* ================
+    Hero 
+  ================*/
+/* typography */
+.hero-tagline {
+  color: var(--almost-white);
+  width: 44.4%;
+  letter-spacing: 1px;
+  padding-top: 0.5em;
+}
+
+.tagline-highlight {
+  color: var(--aqua-blue);
+}
+/* layout */
+.hero-section {
+  margin-top: 5em;
+  height: 66vh;
+  min-height: 375px;
+  background: url("./images/hero-bg.png");
+  background-size: cover;
+  background-position: left;
+  padding-top: 1em;
+}
+
+.view-projects {
+  border: none;
+  font-family: inherit;
+  letter-spacing: 1px;
+  color: var(--white);
+  background: var(--dark-aqua-blue);
+  padding: 1em 2em;
+  border-radius: 33px;
+  font-weight: bold;
+  margin-top: 3em;
+  font-size: 1rem;
+}
+.view-projects:hover,
+.view-projects:focus {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.local-message-wrapper {
+  display: none;
+}
+
+@media screen and (min-height: 800px) {
+  .hero-tagline {
+    font-size: 1.8rem;
+  }
+}
+
+@media screen and (min-height: 900px) {
+  .hero-tagline {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (min-height: 1080px) {
+  .hero-tagline {
+    font-size: 2.5rem;
+    margin-bottom: 2em;
+  }
+  .view-projects {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .hero-tagline {
+    font-size: 3rem;
+    margin-top: 1.5em;
+  }
+  .view-projects {
+    font-size: 1.05rem;
+  }
+
+  .hero-container {
+    position: relative;
+  }
+
+  .location-icon {
+    width: 111px;
+  }
+
+  .local-message-wrapper {
+    color: var(--white);
+    width: 333px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    top: 44px;
+    display: flex;
+  }
+  .local-message {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+}
+
+/* ===============
+  General info section
+==================*/
+/* about me typography */
+.aboutMe-title {
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  margin-top: 2em;
+  margin-bottom: 0.3em;
+  color: var(--almost-black);
+}
+.about-me-text {
+  margin-bottom: 3em;
+  line-height: 1.6;
+  font-size: 0.9rem;
+}
+
+/* save money section */
+.save-money,
+.safteyFirst {
+  background: url("./images/hardwood-bg.png");
+  padding: 3.3em 0;
+}
+.general-benefit {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.save-money-icon,
+.saftey-icon {
+  width: 111.1px;
+  margin-bottom: 1.5em;
+}
+.saveMoney {
+  display: flex;
+  justify-content: space-between;
+}
+.article-text {
+  letter-spacing: 0.5px;
+  line-height: 1.6;
+  position: relative;
+  margin-left: 1em;
+  margin-bottom: 2em;
+}
+.article-text::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  background: var(--almost-black);
+  position: absolute;
+  border-radius: 100%;
+  left: -22px;
+  top: 11px;
+}
+.planner-section {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.plan-icon {
+  display: none;
+}
+.safteyFirst {
+  margin-bottom: 6em;
 }
 
-.App-link {
-  color: #61dafb;
+@media screen and (min-width: 1234px) {
+  .about-me-text {
+    margin-bottom: 5em;
+    line-height: 1.6;
+    font-size: 1.15rem;
+    width: 55%;
+  }
+  .benefit-grid {
+    width: 69%;
+    position: absolute;
+    right: 0;
+  }
+  .article-text {
+    font-size: 1.3rem;
+  }
+  .general-benefit {
+    display: flex;
+    flex-direction: row;
+    margin-left: 6.39em;
+    padding-right: 2em;
+  }
+  .general-benefit article {
+    margin-left: 3em;
+  }
+  .plan-icon {
+    display: block;
+    position: absolute;
+    height: 202px;
+    right: -333px;
+    bottom: -11px;
+    opacity: 0.5;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* =================
+    View Projects Section
+====================*/
+
+/* typography */
+.viewProjects {
+  color: var(--white);
+}
+.experience-subhead {
+  color: var(--almost-white);
+}
+.highlight {
+  color: var(--yellow);
+}
+.experience-head-title {
+  font-size: 1.3rem;
+}
+
+/* layout */
+.viewProjects {
+  background: var(--purple);
+  padding: 4.4em 0;
+  z-index: 1;
+}
+.section-label {
+  display: none;
+}
+.renovator-icon {
+  width: 44px;
+  margin-right: 3em;
+}
+.experience {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.project-header {
+  background: var(--dark-purple);
+  padding: 0.5em 0;
+  margin-bottom: 2.2em;
+}
+/* styling project sections */
+
+.section-1,
+.section-4 {
+  height: 285px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ==================
+  Section 1 After
+======================*/
+.section-1 {
+  margin-top: 6em;
+  margin-bottom: 4em;
+}
+.section-1::before {
+  content: "";
+  display: block;
+  position: absolute;
+  background: var(--dark-purple);
+  width: 333px;
+  height: 222px;
+  bottom: 0;
+  right: 0;
+}
+.after-img {
+  /* position relative brings image to the front on z-axis */
+  position: relative;
+  width: 77%;
+  display: inline-block;
+  margin-top: -4.4em;
+  max-width: 444px;
+  max-height: 270px;
+  object-fit: cover;
+}
+after-img:hover {
+  filter: brightness(33%);
+  cursor: pointer;
+}
+.project-intro {
+  display: none;
+}
+.pic-caption {
+  font-weight: bold;
+  letter-spacing: 0.88px;
+  font-size: 0.8rem;
+}
+
+/* ==================
+  Section 4 Before
+======================*/
+.section-4 {
+  margin-bottom: 5em;
+}
+.section-4::before {
+  content: "";
+  display: block;
+  position: absolute;
+  background: var(--dark-purple);
+  width: 279px;
+  height: 222px;
+  bottom: 0;
+  left: 20px;
+  height: 185px;
+}
+.before-img {
+  display: inline-block;
+  width: 77%;
+  height: 202px;
+  border-radius: 33px;
+  position: relative;
+  max-width: 333px;
+  object-fit: cover;
+  border: 0.5px solid var(--yellow);
+}
+.before-img:hover {
+  filter: brightness(33%);
+  cursor: pointer;
+}
+.before-img,
+.after-img {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+.pic-caption {
+  position: absolute;
+  bottom: 11px;
+}
+.section-2 {
+  display: none;
+}
+.section-2-mobile {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 2.2em 0;
+}
+.option {
+  background: var(--light-purple);
+  color: #333333;
+  width: 44px;
+  height: 44px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+.option.current-tab {
+  background: var(--yellow);
+  color: var(--almost-black);
+}
+.option:hover,
+.option:focus {
+  cursor: pointer;
+  background: var(--dark-purple);
+  color: var(--white);
+}
+.experience {
+  display: flex;
+  justify-content: center;
+}
+/* project before pic styling */
+
+.project-description {
+  background: var(--light-purple);
+  padding: 1.5em;
+  line-height: 1.6;
+}
+.project-description h3 {
+  margin-bottom: 0.5em;
+}
+
+/* navigate project mobile version */
+.mobile-section-label {
+  margin-top: 5em;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.mobile-label {
+  opacity: 0.639;
+  margin-right: 0.5em;
+}
+.mobile-arrow {
+  font-size: 2rem;
+  opacity: 0.639;
+}
+
+.section-label:hover .right-arrow,
+.mobile-section-label:hover .mobile-arrow,
+.section-label:focus .right-arrow,
+.mobile-section-label:focus .mobile-arrow,
+.section-label:focus .label,
+.mobile-section-label:focus .mobile-label,
+.section-label:hover .label,
+.mobile-section-label:hover .mobile-label {
+  color: var(--white);
+  opacity: 1;
+  cursor: pointer;
+}
+
+/* locks style components together when increasing viewport */
+@media screen and (min-width: 555px) {
+  .mobile-margin {
+    width: 444px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
   }
-  to {
-    transform: rotate(360deg);
+  .section-4 {
+    margin-bottom: 4.4em;
+  }
+  .section-2-mobile {
+    margin: 4.4em 0;
   }
 }
+
+/* Desktop adjustments for project section */
+@media screen and (min-width: 1234px) {
+  .mobile-margin {
+    margin-top: 0;
+  }
+  .viewProjects {
+    margin-top: 693px;
+  }
+  .renovator-icon {
+    width: 66px;
+  }
+  .project-header {
+    width: 666px;
+    padding: 0;
+    position: absolute;
+    left: 0;
+  }
+  .experience {
+    width: inherit;
+    padding-left: 111.1px;
+    padding-right: 11em;
+  }
+  /* Ribbon style */
+  .project-header::before {
+    content: "";
+    /* bottom triangle */
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    border-bottom: 44px solid var(--dark-purple);
+    border-right: 44px solid transparent;
+    right: -44px;
+    bottom: 0;
+  }
+  .project-header::after {
+    content: "";
+    /* top triangle */
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    border-bottom: 44px solid var(--dark-purple);
+    border-right: 44px solid transparent;
+    right: -44px;
+    top: 0;
+    transform: rotateX(180deg);
+  }
+  .experience-head-title {
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+  }
+  .experience-subhead {
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+  }
+  .section-label {
+    display: flex;
+    position: absolute;
+    right: 111px;
+    margin-top: 1em;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    align-items: flex-end;
+  }
+  .label {
+    opacity: 0.55;
+  }
+  .right-arrow {
+    font-size: 44px;
+    color: var(--arrow-color);
+    margin-left: 1em;
+  }
+  .display-project {
+    margin-top: 333px;
+    display: grid;
+    grid-template-columns: 1.7fr 1.3fr;
+    grid-template-areas:
+      "After Options"
+      "Description Before";
+  }
+  /* ===============
+    Section 1 After
+  ==================*/
+  .section-1 {
+    grid-area: After;
+    margin-bottom: 5em;
+    width: 100%;
+  }
+  .section-1::before {
+    left: 0;
+    width: 88%;
+  }
+  .project-intro {
+    position: absolute;
+    bottom: 11.11px;
+    left: 33.33px;
+    display: flex;
+  }
+  .project-name {
+    color: var(--yellow);
+    font-weight: bold;
+    letter-spacing: 0.5px;
+  }
+  .line {
+    margin: 0 0.5em;
+  }
+  .after-img:hover {
+    filter: brightness(33%);
+    cursor: pointer;
+  }
+  .after-pic-caption {
+    display: none;
+  }
+
+  /* ===============
+    Section 3 After
+  ==================*/
+  .section-3 {
+    grid-area: Description;
+  }
+
+  /* =================
+      Section 2 tabs
+  =====================*/
+  .section-2-mobile {
+    display: none;
+  }
+  .section-2 {
+    display: flex;
+    flex-direction: column;
+  }
+  .section-2 {
+    grid-area: Options;
+    margin-top: -111px;
+  }
+  .tab {
+    width: 55.5%;
+    padding: 1em;
+    align-self: center;
+    margin-bottom: 1em;
+    max-width: 333.33px;
+  }
+  .tab.current-tab {
+    background: var(--dark-purple);
+    position: relative;
+  }
+  .tab.current-tab::before {
+    /* equilateral triangle  */
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid var(--yellow);
+    position: absolute;
+    margin-left: 3em;
+    margin-top: -0.1em;
+  }
+  .tab-title {
+    margin-left: 5.5em;
+    letter-spacing: 0.5px;
+  }
+  .tab:first-child {
+    margin-top: 2em;
+  }
+  /* tab hover */
+  .tab:hover,
+  .tab:focus {
+    background: var(--light-purple);
+    cursor: pointer;
+    color: var(--white);
+  }
+  .tab:hover.tab:before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid var(--dark-purple);
+    position: absolute;
+    margin-left: 3em;
+    margin-top: -0.1em;
+  }
+
+  /* ====================
+    Section 4 Before 
+  =====================*/
+
+  .section-4 {
+    grid-area: Before;
+    width: 100%;
+    margin-top: 2.2em;
+  }
+  .after-img,
+  .before-img {
+    max-width: none;
+  }
+  .after-img {
+    width: 93.6%;
+    max-height: none;
+    height: 400px;
+    margin-top: -202px;
+  }
+  .before-img {
+    width: 77%;
+    margin-left: 111px;
+    margin-top: -111px;
+    height: 303px;
+  }
+  .section-4::before {
+    left: initial;
+    right: 0;
+    width: 63.9%;
+  }
+  .project-description {
+    width: 97%;
+  }
+  .mobile-section-label {
+    display: none;
+  }
+}
+
+/* Scroll Refs */
+.general-info {
+  position: relative;
+}
+.view-projects-ref {
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  bottom: 0;
+}
+
+@media screen and (min-width: 1234px) {
+  .view-projects-ref {
+    bottom: -639px;
+  }
+}
+
+/* ============
+  Page Animations
+===============*/
