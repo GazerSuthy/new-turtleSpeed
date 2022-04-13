@@ -13,14 +13,14 @@ const GeneralInfo = ({ projectLinkRef }) => {
           {/* why choose turtle speed! */}
           <p className="about-me-text">
             Renovations are a long term investment which will hugely increase
-            the price of your properties. As an experienced renovator my focus
-            is on organizing the planning stage, which will avoid costly errors
-            that waste both time and resources. By planning the foundation of
-            each project, it ensures the overall quality for a successful
-            renovation. Well planned renovations leads to a{" "}
-            <strong>long-lasting</strong> build without the need for any repair
-            maintainance. Nevertheless, I look forward to transforming your
-            ideal expectations in to reality!
+            the price of your properties. As an experienced renovator, my focus
+            is on organizing the planning stage which will guarantee the
+            avoidance of costly errors that waste both time and resources. By
+            planning the foundation of each project, it ensures the overall
+            quality for a successful renovation. A well planned renovation leads
+            to a <strong>long-lasting</strong> build without the need for any
+            repair maintainance. Nevertheless, I look forward to transforming
+            your ideal expectations in to reality!
           </p>
         </div>
       </section>
