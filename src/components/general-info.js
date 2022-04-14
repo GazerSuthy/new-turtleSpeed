@@ -3,6 +3,7 @@ import React from "react";
 // img icons
 import saveMoney from "../images/save-money-icon.png";
 import safteyFirst from "../images/saftey-icon.png";
+import location_icon from "../images/location-icon.png";
 
 const GeneralInfo = ({ projectLinkRef }) => {
   return (
@@ -24,6 +25,17 @@ const GeneralInfo = ({ projectLinkRef }) => {
           </p>
         </div>
       </section>
+
+      <div className="local-message-wrapper-mobile">
+        <img
+          src={location_icon}
+          alt="location icon"
+          className="location-icon"
+        />
+        <p className="local-message">
+          Local Renovator In the Greater Toronto Area
+        </p>
+      </div>
 
       <div className="benefit-grid">
         <section className="save-money">
