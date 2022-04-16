@@ -20,7 +20,7 @@ const ProjectData = [
     intro: "renovated ceiling of this jewelery store",
     pictures: [gold_after, gold_before, gold_p1, gold_p2],
     description:
-      "Store owner desired to renovate the ceiling of his store to give it an apperance of a jewelery shop. The biggest challenge of this project was the height of the ceiling and the fact that the entire area of the ceiling was to be replaced. By careful planning, I was confidently able to create a design which fit the budget range of the owner while meeting his design expectations. Thanks to my detailed planning, I was even able to squeeze a last-minute request made by the owner such as installing a large LED light pannel as the center piece. Overall the owner, store customers, and I were extremely happy with the results of this renovation project!  ",
+      "Store owner desired to renovate the ceiling of his store to give it an apperance of a jewelery shop. The biggest challenge of this project was the height of the ceiling and the fact that the entire area of the ceiling was to be replaced. By careful planning, I was confidently able to create a design which fit the budget range of the owner while meeting his design expectations. Overall the owner, store customers, and I were extremely happy with the results of this renovation project!  ",
   },
   {
     id: 2,
