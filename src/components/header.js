@@ -1,7 +1,5 @@
 import React from "react";
 
-import Logo from "../images/logo.png";
-
 // icons
 import { Icon } from "@iconify/react";
 import phoneIcon from "@iconify/icons-akar-icons/phone";
@@ -16,7 +14,10 @@ const Header_Section = ({ setScrollTo }) => {
             setScrollTo("home");
           }}
         >
-          <img src={Logo} alt="Not found" className="logo" />
+          <h1 className="logo">
+            <span className="purple-highlight">Perfect</span> Universe
+            Renovations
+          </h1>
         </div>
 
         {/* Contact info */}

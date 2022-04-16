@@ -9,8 +9,8 @@ const Hero = ({ setScrollTo }) => {
         <h1 className="hero-tagline">
           <span className="tagline-highlight">Longetivity</span>,{" "}
           <span className="tagline-highlight">Quality</span>,{" "}
-          <span className="tagline-highlight">Affordable</span>, Renovations
-          From Turtle Speed Inc
+          <span className="tagline-highlight">Affordable</span>, Projects From
+          Perfect Universe Renovation
         </h1>
 
         <button

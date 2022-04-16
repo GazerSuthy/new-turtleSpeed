@@ -5,6 +5,7 @@ import GeneralInfo from "./components/general-info";
 import HeaderSection from "./components/header";
 import Hero from "./components/hero";
 import ViewProjects from "./components/view-projects";
+import Footer from "./components/footer";
 
 function App() {
   /* =======================
@@ -37,6 +38,7 @@ function App() {
       <Hero setScrollTo={setScrollTo}></Hero>
       <GeneralInfo projectLinkRef={projectLinkRef}></GeneralInfo>
       <ViewProjects setScrollTo={setScrollTo}></ViewProjects>
+      <Footer></Footer>
     </div>
   );
 }

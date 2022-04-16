@@ -13,6 +13,8 @@
   --light-blue: #beebf1;
   --dark-aqua-blue: #0b515c;
   --local-message-colour: #3f7b84;
+  --brown: #ead3c4;
+  --dark-brown: #9c8d83;
   --white: #ffffff;
   --almost-white: #b4b4b4;
   --almost-black: #202020;
@@ -23,7 +25,8 @@
 .header-container,
 .hero-container,
 .general-info-container,
-.project-container {
+.project-container,
+.footer-container {
   width: 88%;
   margin: 0 auto;
 }
@@ -41,8 +44,9 @@
   top: 0;
 }
 .logo {
-  width: 202px;
-  margin-top: 11px;
+  width: fit-content;
+  font-size: 1.25rem;
+  margin: 11px 0;
 }
 .logo-container:hover {
   cursor: pointer;
@@ -90,9 +94,14 @@
   width: 40px;
 }
 
+.purple-highlight {
+  color: var(--light-purple);
+  font-style: italic;
+}
+
 @media screen and (min-width: 500px) {
   .logo {
-    width: 250px;
+    font-size: 1.3rem;
   }
 }
 
@@ -103,6 +112,9 @@
 }
 
 @media screen and (min-width: 1440px) {
+  .logo {
+    width: fit-content;
+  }
   .hamburger {
     display: none;
   }
@@ -813,6 +825,28 @@ after-img:hover {
   .view-projects-ref {
     bottom: -639px;
   }
+}
+
+/* ==============
+  Footer Styles
+================*/
+footer {
+  background: var(--brown);
+  padding: 4em 0;
+}
+.contact-title {
+  letter-spacing: 1px;
+  color: var(--dark-brown);
+  font-size: 2rem;
+}
+.phone-contact,
+.email-contact {
+  display: flex;
+  margin-top: 1em;
+  align-items: center;
+}
+.footer-icon {
+  margin-right: 0.5em;
 }
 
 /* ============

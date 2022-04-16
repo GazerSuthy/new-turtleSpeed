@@ -15,9 +15,9 @@ const GeneralInfo = ({ projectLinkRef }) => {
           <p className="about-me-text">
             Renovations are a long term investment which will hugely increase
             the price of your properties. As an experienced renovator, my focus
-            is on organizing the planning stage which will guarantee the
-            avoidance of costly errors that waste both time and resources. By
-            planning the foundation of each project, it ensures the overall
+            is on organizing the planning of each project which will guarantee
+            the avoidance of costly errors that waste both time and resources.
+            By planning the foundation of each project, it ensures the overall
             quality for a successful renovation. A well planned renovation leads
             to a <strong>long-lasting</strong> build without the need for any
             repair maintainance. Nevertheless, I look forward to transforming
