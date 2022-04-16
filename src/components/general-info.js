@@ -60,13 +60,13 @@ const GeneralInfo = ({ projectLinkRef }) => {
             <img
               src={safteyFirst}
               alt="hands holding up a shield"
-              className="saftey-icon"
+              className="safety-icon"
             />
             <article className="saftey-article">
               <div className="bullet-point"></div>
               <p className="article-text">
-                <strong>Saftey</strong> is my <strong>top prioriety</strong>{" "}
-                when executing renovation projects
+                <strong>Safety</strong> is my <strong>top priority</strong> when
+                executing renovation projects
               </p>
             </article>
           </div>

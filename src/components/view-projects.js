@@ -26,9 +26,9 @@ const ViewProjects = ({ setScrollTo }) => {
           />
           <section className="experience-head">
             <h2 className="experience-head-title">
-              <span className="highlight">Licensed</span> Renovator
+              <span className="highlight">Certified</span> Renovator
             </h2>
-            <h5 className="experience-subhead">20+ years of experience</h5>
+            <h5 className="experience-subhead">15+ years of experience</h5>
           </section>
         </div>
       </section>
